@@ -1,0 +1,27 @@
+<h1>デスク一覧表示</h1>
+
+<% if @desks.any? %>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>タイトル</th>
+                <th>デスク名</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @desks.each do |desk| %>
+                <tr>
+                    <td><%= link_to desk.id, desk %></td>
+                    <td><%= desk.title %></td>
+                    <td><%= desk.content %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <div>
+        <%= paginate @desks %>
+    </div>
+<% end %>
+
+<%= link_to "新規投稿", new_desk_path, class: "btn btn-primary" %>

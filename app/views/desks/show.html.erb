@@ -1,0 +1,19 @@
+<h1>id: <%= @desk.id %>のデスク詳細ページ</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <td><%= @desk.id %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @desk.title %></td>
+    </tr>
+    <tr>
+        <th>デスク名</th>
+        <td><%= @desk.content %></td>
+    </tr>
+</table>
+
+<%= link_to "このデスク編集する", edit_desk_path, class: "btn btn-light" %>
+<%= link_to "このデスクを削除する", @desk, method: :delete, data: {confirm: "本当に削除してよろしいですか？"}, class: "btn btn-danger" %>
